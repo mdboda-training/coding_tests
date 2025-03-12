@@ -1,7 +1,10 @@
 package com.mdsolutions.coding.tests;
 
+import java.util.Comparator;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class LongestSubstring {
 
@@ -11,6 +14,9 @@ public class LongestSubstring {
 		for (int i = 0; i < s.length(); i++) {
 			maxLengthStringSet.add( test(s.substring(i, s.length())));
 		}
+		
+//		maxLengthStringSet.stream().max(Comparator.comparingInt( s1->s1.length()));
+//		System.out.println(s2.get());
 		 int maxLength = maxLengthStringSet.stream()
                  .mapToInt(String::length)
                  .max()
@@ -30,16 +36,13 @@ public class LongestSubstring {
 		for (int index = 0; index < s.length() && !foundDuplicate; index++) {
 			if (index == s.length() - 1) {
 				islastIndex = true;
-				sB.append(sArray[index]);
 			}
 			if (sB.toString().contains(sArray[index]) || islastIndex) {
 				foundDuplicate = true;
 				maxLengthString = sB.toString();
-//				System.out.println(sB.toString() + ":" + sB.toString().length());
 			}
 			sB.append(sArray[index]);
 		}
 		return maxLengthString;
-
 	}
 }
