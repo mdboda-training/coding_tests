@@ -11,6 +11,8 @@ public class Test {
 		System.out.println("Longest substring with unique characters: " + maxString+" "+maxString.length());
 	}
 
+	
+	
 	public static String findLongestUniqueSubstring(String s) {
 		int n = s.length();
 		String longestSubstring = "";

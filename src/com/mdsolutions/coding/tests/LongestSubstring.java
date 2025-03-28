@@ -1,10 +1,7 @@
 package com.mdsolutions.coding.tests;
 
-import java.util.Comparator;
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class LongestSubstring {
 
@@ -12,7 +9,7 @@ public class LongestSubstring {
 		String s="ABCDEFGABEF";
 		Set<String> maxLengthStringSet = new HashSet<String>();
 		for (int i = 0; i < s.length(); i++) {
-			maxLengthStringSet.add( test(s.substring(i, s.length())));
+			maxLengthStringSet.add( longestSubstring(s.substring(i, s.length())));
 		}
 		
 //		maxLengthStringSet.stream().max(Comparator.comparingInt( s1->s1.length()));
@@ -27,7 +24,7 @@ public class LongestSubstring {
                  .forEach(System.out::println);
 	}
 
-	private static String test(String s) {
+	private static String longestSubstring(String s) {
 		String[] sArray = s.split("");
 		String maxLengthString = "";
 		boolean islastIndex = false;

@@ -18,6 +18,7 @@ public class MostFrequestIps {
         long maxCount = ipCounts.values().stream()
                 .max(Long::compare)
                 .orElse(0L); // Handle empty map case
+        
 
         List<String> mostFrequentIPs = ipCounts.entrySet().stream()
                 .filter(entry -> entry.getValue() == maxCount)

@@ -66,7 +66,8 @@ public class JDK8Features {
 	}
 
 	private static void findHighestPaidEmployee(List<Employee> employeeList) {
-		System.out.println("=======findHighestPaidEmployee==========");
+		// added comments
+		System.out.println("=======findHighestPaidEmployee new piece of code==========");
 		Optional<Employee> optionalEmployee = employeeList.stream().collect( Collectors.maxBy(Comparator.comparing(Employee::getSalary)));
 		Employee emp = optionalEmployee.get();
 		System.out.println(emp);
